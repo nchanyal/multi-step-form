@@ -1,10 +1,26 @@
 import Image from "next/image";
 
 const steps = [
-  { number: 1, title: "YOUR INFO", subtitle: "STEP 1" },
-  { number: 2, title: "SELECT PLAN", subtitle: "STEP 2" },
-  { number: 3, title: "ADD-ONS", subtitle: "STEP 3" },
-  { number: 4, title: "SUMMARY", subtitle: "STEP 4" },
+  {
+    number: 1,
+    title: "YOUR INFO",
+    subtitle: "STEP 1",
+  },
+  {
+    number: 2,
+    title: "SELECT PLAN",
+    subtitle: "STEP 2",
+  },
+  {
+    number: 3,
+    title: "ADD-ONS",
+    subtitle: "STEP 3",
+  },
+  {
+    number: 4,
+    title: "SUMMARY",
+    subtitle: "STEP 4",
+  },
 ];
 
 export default function Sidebar({ activeStep }: { activeStep: number }) {
@@ -21,6 +37,7 @@ export default function Sidebar({ activeStep }: { activeStep: number }) {
                     ? "bg-blue-200 text-black"
                     : "border"
                 }`}
+                aria-current={activeStep === step.number ? "step" : undefined}
               >
                 {step.number}
               </div>
